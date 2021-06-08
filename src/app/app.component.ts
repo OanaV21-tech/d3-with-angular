@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'd3-with-angular';
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
 }
