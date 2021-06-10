@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'd3-with-angular';
   navbarOpen = false;
 
+  constructor() { }
+
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
