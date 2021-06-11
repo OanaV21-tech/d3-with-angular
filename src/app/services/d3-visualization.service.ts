@@ -10,7 +10,7 @@ import { map } from "rxjs/operators";
 
 export class D3VisualizationService {
   private dataUrl =
-    "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv";
+    'https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered_comma.csv';
 
   fetchData(): Observable<{ date: Date; value: number }[]> {
     const parseTime = timeParse("%Y-%m-%d");
