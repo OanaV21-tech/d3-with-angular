@@ -33,6 +33,8 @@ export class PieChartComponent implements OnInit {
   ngOnInit(): void {
     this.initSvg();
     this.drawPie();
+    //chart responsive
+    window.addEventListener('resize', this.resize.bind(this));
   }
 
   initSvg() {
@@ -76,6 +78,23 @@ export class PieChartComponent implements OnInit {
     g.append('text').attr('transform', (d: any) => 'translate(' + this.labelPer.centroid(d) + ')')
         .attr('dy', '.35em')
         .text((d: any) => d.data.electionP + '%');
+  }
+
+  private setSVGDimensions() {
+    this.radius = (Math.min(this.width, this.height)) / 2;
+    this.svg.attr('width', 2 * this.radius).attr('height', 2 * this.radius);
+    this.svg.select('g').attr('transform', 'translate(' + this.radius + ',' + this.radius + ')');
+  }
+
+  //chart responsive
+  private resize() {
+    this.setSVGDimensions();
+    this.drawPie();
+    this.repaint();
+  }
+
+  private repaint() {
+    this.drawPie();
   }
 
 }

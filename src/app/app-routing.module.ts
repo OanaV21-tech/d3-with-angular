@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'bar-chart', component: BarChartComponent },
   { path: 'line-chart', component: LineChartComponent },
   { path: 'pie-chart', component: PieChartComponent },
-  { path: 'd3-visualization', component: D3VisualizationComponent },
+  { path: 'd3-visualization', component: D3VisualizationComponent }
 ];
 
 @NgModule({
